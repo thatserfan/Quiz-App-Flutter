@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/questions.dart';
+import 'package:quiz_app/questions_summary.dart';
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({
@@ -14,10 +15,10 @@ class ResultScreen extends StatelessWidget {
 
     for (var i = 0; i < chosenAnswers.length; i++) {
       sammary.add({
-        'qusetion_index' : i,
-        'qusetion' : questions[i].text,
-        'correct_answer' :  questions[i].answers[0],
-        'user_answer' : chosenAnswers[i],
+        'qusetion_index': i,
+        'qusetion': questions[i].text,
+        'correct_answer': questions[i].answers[0],
+        'user_answer': chosenAnswers[i],
       });
     }
 
@@ -37,9 +38,7 @@ class ResultScreen extends StatelessWidget {
               "You Answerd 1 of 15 Questions Correctly!",
             ),
             const SizedBox(height: 30),
-            const Text(
-              "list of Q and A",
-            ),
+            QuestionsSummary(getSummaryData()),
             TextButton(
               onPressed: () {},
               child: const Text("Restart Quiz!"),
