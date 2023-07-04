@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/data/questions.dart';
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({
@@ -7,6 +8,21 @@ class ResultScreen extends StatelessWidget {
   });
 
   final List<String> chosenAnswers;
+
+  List<Map<String, Object>> getSummaryData() {
+    final List<Map<String, Object>> sammary = [];
+
+    for (var i = 0; i < chosenAnswers.length; i++) {
+      sammary.add({
+        'qusetion_index' : i,
+        'qusetion' : questions[i].text,
+        'correct_answer' :  questions[i].answers[0],
+        'user_answer' : chosenAnswers[i],
+      });
+    }
+
+    return sammary;
+  }
 
   @override
   Widget build(BuildContext context) {
