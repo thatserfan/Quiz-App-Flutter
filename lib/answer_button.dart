@@ -16,7 +16,7 @@ class AnswerButton extends StatelessWidget {
       padding: const EdgeInsets.all(6),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          fixedSize: const Size(0, 50),
+          fixedSize: const Size(100, 50),
           backgroundColor: const Color.fromARGB(255, 50, 10, 160),
           foregroundColor: Colors.white,
           shape: RoundedRectangleBorder(
