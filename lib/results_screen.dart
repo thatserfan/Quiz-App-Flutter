@@ -54,7 +54,7 @@ class ResultScreen extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             QuestionsSummary(summaryData),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             AnswerButton(
               answerText: "Restart Quiz!",
               onTap: onRestartQuiz,

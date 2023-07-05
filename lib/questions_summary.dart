@@ -64,10 +64,10 @@ class QuestionsSummary extends StatelessWidget {
                           color: Colors.green,
                         ),
                       ),
+                      const SizedBox(height: 20),
                     ],
                   ),
                 ),
-                const SizedBox(height: 100),
               ],
             );
           }).toList(),
