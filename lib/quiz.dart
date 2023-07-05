@@ -15,7 +15,7 @@ class Quiz extends StatefulWidget {
 
 class _QuizState extends State<Quiz> {
   // Widget? activeScreen;
-  final List<String> _selectedAnswers = [];
+  List<String> _selectedAnswers = [];
   var activeScreen = 'start-screen';
 
   // @override
@@ -27,6 +27,13 @@ class _QuizState extends State<Quiz> {
   void _switchScreen() {
     setState(() {
       activeScreen = 'questions-screen';
+    });
+  }
+
+  void _restartQuiz() {
+    setState(() {
+      _selectedAnswers = [];
+      activeScreen = 'start-screen';
     });
   }
 
@@ -53,6 +60,7 @@ class _QuizState extends State<Quiz> {
     if (activeScreen == 'results-screen') {
       screenWidget = ResultScreen(
         chosenAnswers: _selectedAnswers,
+        onRestartQuiz: _restartQuiz,
       );
     }
 
